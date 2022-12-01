@@ -8,7 +8,7 @@
 	<form>
 	<fieldset>
 		<legend>배송지 정보</legend>
-		<form>
+		
 			<p>배송방법 
 			<input type="radio" name="delivery" value="1" checked> 일반택배
 			<input type="radio" name="delivery" value="2"> 편의점택배
@@ -22,15 +22,34 @@
 			<p>받으실 분 <input type="text" size="20"></p>
 			<p>휴대폰번호
 			   <select name="phone">
-			   <option value="1">010</option>
-			   <option value="2">011</option>
-			   <option value="3">017</option>
+				   <option value="1">010</option>
+				   <option value="2">011</option>
+				   <option value="3">017</option>
 			   </select>
-			   - <input type="text" size="8"> - <input type="text" size="8"></p>
-			<p>
-				
+			   - <input type="text" size="8"> 
+			   - <input type="text" size="8">
+			 </p>
+			<p> 유선전화(선택)
+				<select>
+					<option>02</option>
+					<option>031</option>
+					<option>062</option>
+				</select>
+				- <input type="text" size="8">
+				- <input type="text" size="8">
 			</p>
-		</form>
+			<p>주소 <input type="text" size="10"> 
+				<a href="http://www.epost.go.kr" target="_blank">우편번호검색</a>
+				</p>
+			<p>지번 주소 : <input type="text" size="50"></p>
+			<p>도로명 주소 : <input type="text" size="50"></p>
+			<p>나머지 주소 : <input type="text" size="50"></p>
+			<p>배송메시지
+				<input type="radio" name="mes" checked> 예
+				<input type="radio" name="mes"> 아니오 <br>
+				<input type="text" size="50" placeholder="택배 기사님께 전달할 메시지를 남겨주세요.">
+			</p>
+	
 	</fieldset>
 	</form>	
 					
