@@ -22,10 +22,10 @@
 		var num10 = parseInt(i / 10);
 		var num1 = i % 10;
 		
-		if (num10 % 3 == 0)		cnt++;
-		if (num1 % 3 == 0)		cnt++;
+		if (num10 != 0 && num10 % 3 == 0 )		cnt++;
+		if (num1 != 0 && num1 % 3 == 0)			cnt++;
 		
-		if (num10 != 0 && cnt == 2){
+		if (cnt == 2){
 			document.write("짝짝 ");
 		}
 		else if (cnt == 1){
