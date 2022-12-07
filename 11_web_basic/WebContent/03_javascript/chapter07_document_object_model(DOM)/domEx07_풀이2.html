@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8"> 
+<meta charset="UTF-8">
 <title>연습예제</title>
+<!-- 22.12.07 22:28~22:38 -->
 <script>
-
-    function answer() {
-
-        var grade = document.getElementById("grade").value;
-        
-        document.getElementById("choiceGradeLabel").innerHTML = "선택된 학년";
-        document.getElementById("choiceGrade").value = grade;  //text타입에 value를 지정하면 자동완성처럼 되어있다.     
-        document.getElementById("choiceGrade").disabled = true;
-
-    }
-
-
+	function answer(){
+		
+		var grade = document.getElementById("grade").value;
+		
+		document.getElementById("choiceGradeLabel").innerHTML = "선택된 학년";
+		document.getElementById("choiceGrade").value = grade;
+		document.getElementById("choiceGrade").disabled = true;
+	}
 </script>
 </head>
 <body>
-
+	
 	<!-- 
 		
 		셀렉트 태그에서 학년을 선택하고 버튼을 클릭하면 화면에 
@@ -44,5 +41,7 @@
     <p>
         <span id="choiceGradeLabel">결과 </span> : <input type="text" id="choiceGrade">
     </p>
+
+ 
 </body>
 </html>
