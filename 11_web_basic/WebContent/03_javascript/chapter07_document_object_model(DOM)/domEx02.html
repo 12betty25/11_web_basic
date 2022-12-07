@@ -68,14 +68,42 @@
 		alert("test2함수가 실행되었습니다.");
 		  
 		//예시 1) checkboxEx 배열의 크기 가져오기
+		var checkboxEx = document.getElementsByName("checkboxEx");
+		console.log("length: " + checkboxEx.length);
+		console.log("");
 		
 		//예시 2) checkboxEx의 요소의 값을 가져오기
+		for (var i = 0; i < checkboxEx.length; i++) {
+			console.log("value: " + checkboxEx[i].value);
+		}
+		console.log("");
 		
-		//예시 3) check이름을 가진 check중에서 체크된 것만 확인하기
+		//예시 3) checkboxEx중에서 체크된 것만 확인하기
+		for (var i = 0; i < checkboxEx.length; i++) {
+			
+			if(checkboxEx[i].checked == true){	 //내가 값을 체크하면		
+				console.log("(checked)value: " + checkboxEx[i].value);	//체크한 값의 value를 뿌려랑
+			}
+		}
+		console.log("")
 		
 		//예시 4) checkboxEx의 특별한 엘리먼트만 체크하기
+		//radio타입과 다르게 다른 선택지를 눌러도 원래 선택지가 선택이 풀리지 않아서
+		//체크되어있는 걸 미리 풀어준 후 강제 체크 시켜준다.
+		for (var i = 0; i < checkboxEx.length; i++) {
+			if (checkboxEx[i].checked){
+				checkboxEx[i].checked = false;
+			}
+		}
+		
+		checkboxEx[0].checked = true;
+		checkboxEx[2].checked = true;
 		
 		//예시 5) checkboxEx에 특정속성 적용하기
+		//다른 선택지로 변경이 불가
+		for (var i = 0; i < checkboxEx.length; i++) {
+			checkboxEx[i].disabled = true;
+		}
 		
 	}
   
