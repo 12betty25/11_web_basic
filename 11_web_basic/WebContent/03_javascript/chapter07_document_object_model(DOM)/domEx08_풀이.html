@@ -8,8 +8,15 @@
 	function answer(){
 		
 		var searchType = document.getElementById("searchType").value;
+		var phValue = "";
 		
-		if (searchType == "goodsId")	placeholder="상품번호를 입력하세요."
+		if (searchType == "goodsId")			 phValue="상품번호를 입력하세요.";
+		else if (searchType == "goodsTitle")	 phValue="상품이름을 입력하세요.";
+		else if (searchType == "goodsWriter")	 phValue="저자를 입력하세요.";
+		else if (searchType == "goodsPublisher") phValue="출판사를 입력하세요.";
+		
+		document.getElementById("searchWord").placeholder = phValue;
+			
 	}
 </script>
 </head>
