@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 10:55 ~ 11:10 -->
+<title>연습예제</title>
+<script>
+
+	function change(img){
+		
+		var brand = document.getElementsByName("brand");
+		if (brand[0].checked)	document.getElementById("brandImg").src = "../images/pic_1.jpg";
+		if (brand[1].checked)	document.getElementById("brandImg").src = "../images/pic_3.jpg";
+		
+	}
+
+</script>
+</head>
+<body>
+	
+
+	<img src="../images/pic_1.jpg" id="brandImg"  width="200" height="200">
+	
+	<hr>
+	<input type="radio" name="brand" onchange="change('apple')"> apple &emsp;
+	<input type="radio" name="brand" onchange="change('microsoft')"> microsoft
+	
+
+</body>
+</html>

@@ -27,7 +27,7 @@
 			if (imageIdx == 9) return;
 			imageIdx++;
 		}
-		else {
+		else if (direct == "before"){
 			if (imageIdx == 1) return;
 			imageIdx--;
 		}
@@ -54,10 +54,12 @@
 		
 	}
 	
+	//
 	function changeColor1(color){
 		document.getElementById("target").style.backgroundColor = color;
 	}
 	
+	//
 	var colors = ["pink", "skyblue", "#ffffa9", "lightgreen", "orange"];
 	var i = 0;
 	function changeColor2(){

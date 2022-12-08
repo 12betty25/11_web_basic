@@ -2,7 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- 22.12.08 10:36 ~ 10: 42-->
 <title>연습예제</title>
+<script>
+	function answer() {
+		
+		var products = document.getElementsByName("products");
+		var totalPrice = 0;
+		
+		if (products[0].checked)	totalPrice += 35000;
+		if (products[1].checked)	totalPrice += 28000;
+		if (products[2].checked)	totalPrice += 10000;
+		
+		document.getElementById("totalPrice").innerHTML = totalPrice;
+	}
+</script>
 </head>
 <body>
 
