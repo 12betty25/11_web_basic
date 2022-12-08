@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습예제</title>
+<script>
+
+	function change(method){
+		
+		
+		if (method == 'basic'){
+			
+			document.getElementById("category").disabled = true;
+			document.getElementById("keyword").disabled = true;
+			document.getElementById("today").disabled = true;
+			document.getElementById("1week").disabled = true;
+			document.getElementById("1month").disabled = true;
+			
+		}
+		
+		else if (method == 'detail'){
+			
+			document.getElementById("category").disabled = false;
+			document.getElementById("keyword").disabled = false;
+			document.getElementById("today").disabled = false;
+			document.getElementById("1week").disabled = false;
+			document.getElementById("1month").disabled = false;
+			
+		}
+		
+	}
+
+</script>
+</head>
+<body>
+
+	<p>
+		<input type="radio" name="search" value="base" checked onchange="change('basic')"> 기본 조회	
+		<input type="radio" name="search" value="detail" onchange="change('detail')"> 상세 조회
+	</p>
+	<div>
+	<p>
+		<select id="category" disabled>
+			<option>사용자 이름</option>
+			<option>사용자 ID</option>
+			<option>제품명</option>
+		</select>
+		<input type="text" id="keyword"  disabled>&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="button" id="today" value="당일" disabled>
+		<input type="button" id="1week" value="1주" disabled>
+		<input type="button" id="1month" value="1달" disabled>
+	</p>
+	</div>
+
+</body>
+</html>
