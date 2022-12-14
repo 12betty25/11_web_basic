@@ -181,10 +181,30 @@ GROUP BY
 		DELIVERY_MESSAGE;
  
 # 배송완료가 아닌 배송상태별로 개수를 조회하기 
-  
+SELECT
+		DELIVERY_STATUS,
+		COUNT(*)
+FROM
+		ORDER_TB
+WHERE
+		DELIVERY_STATUS <> '배송완료'
+GROUP BY
+		DELIVERY_STATUS;
   
 # 'product4' , 'product5' , 'product6'이 아닌 상품별로 주문상품의 총 주문수량을 조회하고 주문량이 많은 순서대로 조회하기.
-
+SELECT
+		PRODUCT_CD,
+		SUM(ORDER_GOODS_QTY)
+FROM
+		ORDER_TB
+WHERE
+		PRODUCT_CD NOT IN ('product4' , 'product5' , 'product6')
+GROUP BY
+		PRODUCT_CD
+ORDER BY
+		SUM(ORDER_GOODS_QTY) DESC
+LIMIT
+		3;
   
 # 연도별로 총 주문건수 , 주문수량 조회하기
 
