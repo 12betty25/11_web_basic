@@ -1,3 +1,5 @@
+CREATE DATABASE DML_TEST;
+
 USE DML_TEST;
 CREATE TABLE ORDER_TB(
 	ORDER_CD 			VARCHAR(50),
@@ -42,7 +44,7 @@ INSERT INTO ORDER_TB VALUES('order20', 'user10' , 'product8' , 5 , '배송전 �
 		 5) MIN   : 조회될 데이터들의 최소값을 가져온다.
 	
 */
-
+SELECT * FROM ORDER_TB;
 # 전체 주문건수를 조회하기
 SELECT
 		COUNT(*)
@@ -151,7 +153,7 @@ SELECT
 FROM
 		ORDER_TB
 GROUP BY
-		MEMBER_ID;
+		MEMBER_ID; #MEMBER ID별로
      
 # 사용자별로 총 주문상품의 양을 조회하기
 SELECT
@@ -180,13 +182,13 @@ FROM
 GROUP BY
 		DELIVERY_MESSAGE;
  
-# 배송완료가 아닌 배송상태별로 개수를 조회하기 
+# 배송완료가 제외한 배송상태별로 개수를 조회하기 
 SELECT
 		DELIVERY_STATUS,
 		COUNT(*)
 FROM
 		ORDER_TB
-WHERE
+WHERE		#조건식 넣어주기
 		DELIVERY_STATUS <> '배송완료'
 GROUP BY
 		DELIVERY_STATUS;
@@ -194,7 +196,7 @@ GROUP BY
 # 'product4' , 'product5' , 'product6'이 아닌 상품별로 주문상품의 총 주문수량을 조회하고 주문량이 많은 순서대로 조회하기.
 SELECT
 		PRODUCT_CD,
-		SUM(ORDER_GOODS_QTY)
+		SUM(ORDER_GOODS_QTY) AS TOTAL_QTY
 FROM
 		ORDER_TB
 WHERE
@@ -202,15 +204,31 @@ WHERE
 GROUP BY
 		PRODUCT_CD
 ORDER BY
-		SUM(ORDER_GOODS_QTY) DESC
+		TOTAL_QTY DESC
 LIMIT
 		3;
+
   
 # 연도별로 총 주문건수 , 주문수량 조회하기
-
-
+SELECT
+		SUBSTRING(ORDER_DT , 1 , 4) AS YEAR,  #SUBSTRING(ORDER_DT , 1 , 4);
+		COUNT(*),
+        SUM(ORDER_GOODS_QTY)
+FROM
+		ORDER_TB
+GROUP BY
+		YEAR;		   #SUBSTRING(ORDER_DT , 1 , 4);
+        
 # 사용자별로 주문상품별로 주문상품의 총수량을 조회하기
-
+SELECT
+		MEMBER_ID,
+        PRODUCT_CD,
+        SUM(ORDER_GOODS_QTY)
+FROM
+		ORDER_TB
+GROUP BY
+		MEMBER_ID,
+        PRODUCT_CD;
 
 /*
                         
@@ -234,12 +252,41 @@ LIMIT
  */	
 
 # 상품별로 주문 총수량을 조회하되 판매량이 10개 이상인 상품만 조회하기
-
+SELECT
+		PRODUCT_CD,
+		SUM(ORDER_GOODS_QTY) AS TOTAL_GOODS_QTY		#SUM(ORDER_GOODS_QTY)
+FROM
+		ORDER_TB
+					#WHERE SUM(ORDER_GOODS_QTY) >= 10 << ERROR CODE: 1111
+GROUP BY
+		PRODUCT_CD
+HAVING
+        TOTAL_GOODS_QTY >= 10; 				#SUM(ORDER_GOODS_QTY) >= 10;
         
 # 2020년에 주문한 상품별로 주문 총수량을 조회하되 주문수량의 합이 10개 이상만 조회하기
-
+SELECT
+		PRODUCT_CD,
+		SUM(ORDER_GOODS_QTY) AS TOTAL_GOODS_QTY
+FROM
+		ORDER_TB
+WHERE
+		ORDER_DT BETWEEN '2020-01-01' AND '2020-12-31'
+GROUP BY
+		PRODUCT_CD
+HAVING
+		TOTAL_GOODS_QTY >= 10;
         
 # 2020년에 주문된 상품 중에서 사용자별로 주문상품별로 총 주문수량을 조회하되 총 주문수량이 5개 이상만 조회하기
-
-
-# 사용자별로 주문상품별로 주문상품의 총수량을 조회하되 주문수량의 합이 5개 이상만 조회하기
+SELECT
+		MEMBER_ID,
+        PRODUCT_CD,
+		SUM(ORDER_GOODS_QTY) AS TOTAL_GOODS_QTY
+FROM
+		ORDER_TB
+WHERE
+		ORDER_DT BETWEEN '2020-01-01' AND '2020-12-31'
+GROUP BY
+		MEMBER_ID,
+        PRODUCT_CD
+HAVING
+		TOTAL_GOODS_QTY >= 5;

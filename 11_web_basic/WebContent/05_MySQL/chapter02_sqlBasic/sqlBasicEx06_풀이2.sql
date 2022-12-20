@@ -40,31 +40,70 @@ SELECT
 FROM
 		CAR
 WHERE
-		CAR_NM = '기아';
+		BRAND_NM = '기아';
 
 # 2) 기아 브랜드가 아닌 차량의 전체 컬럼 조회하기
-
+SELECT
+		*
+FROM
+		CAR
+WHERE
+		BRAND_NM <> '기아';
 
 # 3) 현대와 쌍용 브랜드의 전체 컬럼 조회하기
-
+SELECT
+		*
+FROM
+		CAR
+WHERE
+		BRAND_NM IN ('현대','쌍용');
 
 # 4) 대형차가 아닌 차량의 전체 컬럼 조회하기
-
+SELECT
+		*
+FROM
+		CAR
+WHERE
+		NOT CATEGORY = '대형';
 
 # 5) 소형차와 대형차의 전체 컬럼 조회하기
-
+SELECT
+		*
+FROM
+		CAR
+WHERE
+		CATEGORY IN ('소형','대형');
 
 # 6) 준중형차와 중형차의 전체 컬럼 조회하기
-
+SELECT
+		*
+FROM
+		CAR
+WHERE
+		CATEGORY LIKE '%중형%';
 
 # 7) 중형차중 르노 브랜드의 전체 컬럼 조회하기
-
+SELECT
+		*
+FROM
+		CAR
+WHERE
+		CATEGORY = '중형' AND
+        BRAND_NM = '르노';
 
 # 8) 2021년에 등록된 차량의 전체 컬럼 조회하기
-
+SELECT
+		*
+FROM
+		CAR
+WHERE
+		REG_DT BETWEEN '2021-01-01' AND '2021-12-31';
 
 # 9) 렌트비용이 50000 ~ 100000사이 차량의 전체 컬럼 조회하기
-
+SELECT 
+		*
+FROM
+		
 
 # 10) 기아브랜드 이며 렌트비용이 100000 ~ 200000인 차량의 전체 컬럼 조회하기
 
