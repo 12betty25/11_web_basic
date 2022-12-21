@@ -112,12 +112,17 @@ SELECT
 		*
 FROM
 		CLASS C
-	JOIN STUDENT S
+	LEFT JOIN STUDENT S
 	  ON C.SUBJECT_CD = S.SUBJECT_CD;
 
 
 # RIGHT 조인 사용 예시
-
+SELECT
+		*
+FROM
+		CLASS C
+	RIGHT JOIN STUDENT S
+	  ON C.SUBJECT_CD = S.SUBJECT_CD;
 
 		   	 
 #  (연습 예시) 2층에서 수업을 듣는 학생이름 , 과목이름 , 강의실위치를 조회하시오.			   	 
