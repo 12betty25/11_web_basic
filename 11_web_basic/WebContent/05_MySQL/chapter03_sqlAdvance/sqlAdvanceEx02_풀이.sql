@@ -75,11 +75,11 @@ SELECT
 		*
 FROM
 		ORDER_TB O
-	  INNER JOIN PRODUCT_TB P
-	          ON O.PRODUCT_CD = P.PRODUCT_CD
-      INNER JOIN MEMBER_TB M
-	          ON O.MEMBER_ID = M.MEMBER_ID;   
-
+	  INNER JOIN	PRODUCT_TB P
+			  ON	O.PRODUCT_CD = P.PRODUCT_CD
+	  INNER JOIN	MEMBER_TB M
+			  ON	O.MEMBER_ID = M.MEMBER_ID;
+        
 
 
 # 1) 남자가 주문한 상품의 총 주문량을 조회하기
