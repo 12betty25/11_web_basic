@@ -66,7 +66,9 @@
 				//data : "id="+$("#id").val()+"&isPC="+true,
 				data : param,
 				success : function(){
-					console.log("성공");
+					var checkCnt = $("#checkCnt").text();
+					checkCnt++;
+					$("#checkCnt").text(checkCnt);
 				}
 			})
 			

@@ -33,7 +33,27 @@
 	      
     $(document).ready(function(){
     	
-	    
+    	//서블렛으로 넘길 데이터의 형식(폼)
+	    var product = {
+	    	"productCode" : "0000-1362",
+	    	"productName" : "samsungTV",
+	    	"stock" : 777,
+	    	"isSoldOut" : false,
+	    	"tvSize" : [30,50,70]
+	    };
+    	
+    	//var랑 변수명 생략 가능
+    	var member = {
+    		"memberId" : "admin",
+    		"memberAge" : 20,
+    		"memberAdderss" : "강남구 역삼동",
+    		"memberContact" : "010-1234-5678"
+    	}
+    	
+    	console.log(product);
+    	console.log("");    
+    	console.log(member);
+    	console.log("");
     });
 	
 </script>
