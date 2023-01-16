@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습예제</title>
+<script>
+	function changeImg(){
+		var imgIdx = document.getElementById("selectImg").value;
+		
+		document.getElementById("targetImg").src = "../images/pic_" + imgIdx + ".jpg";
+		
+	}
+</script>
+</head>
+<body>
+	
+	<div>
+		<img src="../images/pic_1.jpg" id="targetImg" width="200" height="200">
+	</div>
+	
+	이미지 : <select id="selectImg" onchange="changeImg()">
+				<option value="1">그림 1</option>
+				<option value="2">그림 2</option>
+				<option value="3">그림 3</option>
+				<option value="4">그림 4</option>
+				<option value="5">그림 5</option>
+				<option value="6">그림 6</option>
+				<option value="7">그림 7</option>
+				<option value="8">그림 8</option>
+				<option value="9">그림 9</option>
+			</select>
+	
+</body>
+</html>

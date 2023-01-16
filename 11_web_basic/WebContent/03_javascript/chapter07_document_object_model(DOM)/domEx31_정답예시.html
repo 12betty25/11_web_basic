@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습예제</title>
+<script>
+
+	function checkData() {
+		
+		var data = "";
+		for (var i = 1; i < 4; i++) {
+			var tempCd = document.getElementsByName("cd" + i)[0].value;
+			var tempNm = document.getElementsByName("nm" + i)[0].value;
+			var tempDeposit = document.getElementsByName("deposit" + i)[0].value;
+			var tempWithdraw = document.getElementsByName("withdraw" + i)[0].value;
+			
+			data += "cd=" + tempCd + "&nm=" + tempNm + "&deposit=" + tempDeposit + "&withdraw=" + tempWithdraw + ",";
+				
+		}
+
+		console.log(data);
+		
+	}
+
+</script>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>품목코드</th>
+			<th>품목명</th>
+			<th>입금</th>
+			<th>출금</th>
+		</tr>
+		<tr>
+			<td><input type="text" name="cd1"></td>
+			<td><input type="text" name="nm1"></td>
+			<td><input type="text" name="deposit1"></td>
+			<td><input type="text" name="withdraw1"></td>
+		</tr>
+		<tr>
+			<td><input type="text" name="cd2"></td>
+			<td><input type="text" name="nm2"></td>
+			<td><input type="text" name="deposit2"></td>
+			<td><input type="text" name="withdraw2"></td>
+		</tr>
+		<tr>
+			<td><input type="text" name="cd3"></td>
+			<td><input type="text" name="nm3"></td>
+			<td><input type="text" name="deposit3"></td>
+			<td><input type="text" name="withdraw3"></td>
+		</tr>
+	</table>
+	<input type="button" value="전송" onclick="checkData()">
+	
+</body>
+</html>

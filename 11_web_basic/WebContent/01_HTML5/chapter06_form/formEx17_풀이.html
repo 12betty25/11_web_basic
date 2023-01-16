@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습예제</title>
+<body>
+    <form>
+		<fieldset>
+			<legend>회원 가입 화면</legend>
+			<p>이름: <input type="text"></p>
+			<p>
+				아이디: <input type="text"> (아이디는 12자 이내로 입력하세요 
+				<input type="button" value="아이디중복확인"> )
+			</p>
+			<p>이름: <input type="password"></p>
+			<p>성별: <input type="radio" name="s" value="1">남
+					 <input type="radio" name="s" value="2">여
+			</p>
+			<p>사는 지역: <select name="home">
+							<option value="1">서울특별시</option>
+							<option value="2">경기도</option>
+							<option value="3">부산광역시</option>
+						   </select>
+			</p>
+			<p>
+				이메일주소: <input type="text">@<input type="text">
+				(이메일수신허용 <input type="radio" name="email" value="1" checked>허용
+				<input type="radio" name="email" value="2">거부)
+			</p>
+			<p>
+			직업:
+				<select name="career">
+				<option value="1">학생</option>
+				<option value="2">회사원</option>
+				<option value="3">사업</option>
+				</select>
+			</p>
+			<p>
+			자기소개<br>
+			<textarea rows="10" cols="50"></textarea>
+			</p>
+			<p>
+				<input type="submit" value="제출">
+				<input type="reset" value="취소">
+			</p>
+		</fieldset>
+	</form>
+</body>
+</html>

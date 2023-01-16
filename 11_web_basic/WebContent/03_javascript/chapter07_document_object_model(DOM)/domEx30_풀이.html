@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습예제</title>
+<script>
+
+	function changeImg(){
+		var imgIdx = document.getElementById("selectImg").value;
+		var imgSize = document.getElementById("imgSize").value;
+		
+		var value = 200;
+		
+		if (imgSize == 'XS')	value = 25;
+		if (imgSize == 'S')		value = 50;
+		if (imgSize == 'M')		value = 100;
+		if (imgSize == 'L')		value = 200;
+		if (imgSize == 'XL')	value = 400;
+		
+		var img = document.getElementById("targetImg");
+		img.src = "../images/pic_" + imgIdx + ".jpg";
+		img.width = value;
+		img.height = value;
+		
+		
+	}
+
+</script>
+
+</head>
+<body>
+	
+	<div>
+		<img src="../images/pic_1.jpg" id="targetImg" width="200" height="200">
+	</div>
+	
+	이미지 : <select id="selectImg" onchange="changeImg()">
+				<option value="1">그림 1</option>
+				<option value="2">그림 2</option>
+				<option value="3">그림 3</option>
+				<option value="4">그림 4</option>
+				<option value="5">그림 5</option>
+				<option value="6">그림 6</option>
+				<option value="7">그림 7</option>
+				<option value="8">그림 8</option>
+				<option value="9">그림 9</option>
+			</select>
+			
+	사이즈 : <select id="imgSize" onchange="changeImg()">
+				<option>XS</option>
+				<option>S</option>
+				<option>M</option>
+				<option selected>L</option>
+				<option>XL</option>
+			</select>
+</body>
+</html>

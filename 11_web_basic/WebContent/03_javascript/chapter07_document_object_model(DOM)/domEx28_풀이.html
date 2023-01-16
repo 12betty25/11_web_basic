@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습예제</title>
+<script>
+	function check(){
+		
+		var email = document.getElementById("email").value;
+		
+		var result = "이메일 형식을 확인하여 주세요.";
+		for (var i = 0; i < email.length; i++) {
+			if (email[i] == '@'){
+				result = "확인되었습니다.";
+			}
+		}
+		document.getElementById("result").innerHTML = result;
+		
+	}
+</script>
+
+</head>
+<body>
+
+	<p>	
+		email : <input type="text" id="email" name="email" > 
+		<input type="button" value="확인" onclick="check()">
+	</p>
+	<span id="result"></span>
+	
+</body>
+</html>
