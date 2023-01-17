@@ -6,15 +6,15 @@
 <script src="../js/jquery-3.6.1.min.js"></script>
 <script>
 	$().ready(function(){
-		$("#brandImg").change(function(){
+		$("[name='brand'").change(function(){	//라디오 선택에 따라 결과가 달라지기 때문에
 			
 			var pic = $("[name='brand']:checked").val();
 			
 			if(pic == 'apple'){
-				
+				$("#brandImg").prop("src",'../images/pic_1.jpg');
 			}
 			else if (pic = 'microsoft'){
-				
+				$("#brandImg").prop("src",'../images/pic_3.jpg');
 			}
 			
 		});
