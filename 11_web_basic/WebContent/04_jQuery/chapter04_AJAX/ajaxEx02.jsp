@@ -61,11 +61,11 @@
 			}
 			
 			$.ajax({
-				url : "/11_web_basic/ajaxEx02",
+				url : "/11_web_basic/ajaxEx02",  //form action과 동일 기능 
 				type : "post",
 				//data : "id="+$("#id").val()+"&isPC="+true,
 				data : param,
-				success : function(){
+				success : function(){			//통신이 성공했을 경우 실행되는 콜백함수
 					var checkCnt = $("#checkCnt").text();
 					checkCnt++;
 					$("#checkCnt").text(checkCnt);

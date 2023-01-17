@@ -48,12 +48,32 @@
     		"memberAge" : 20,
     		"memberAdderss" : "강남구 역삼동",
     		"memberContact" : "010-1234-5678"
-    	}
+    	};
     	
-    	console.log(product);
-    	console.log("");    
+    	var orderList = {"orderList" : [{"orderCd" : "0x001", "orderQty" : 1},
+    									{"orderCd" : "0x002", "orderQty" : 2},
+    									{"orderCd" : "0x003", "orderQty" : 3}]}
+    	
+    	console.log(product);  
     	console.log(member);
+    	console.log(orderList);
     	console.log("");
+    	
+    	var strProduct = JSON.stringify(product);
+    	var strMember = JSON.stringify(member);
+    	var strOrderList = JSON.stringify(orderList);
+    	
+    	console.log(strProduct);
+    	console.log(strMember);
+    	console.log(strOrderList);
+    	
+    	console.log("");
+    	
+    	console.log(JSON.parse(strProduct));
+    	console.log(JSON.parse(strMember));
+    	console.log(JSON.parse(strOrderList));
+    	
+    	
     });
 	
 </script>
